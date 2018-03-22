@@ -8,8 +8,7 @@ class AnimalAdapter(
         animals: ArrayList<Animal>
 ) : SimpleRecyclerViewAdapter<Animal, AnimalAdapter.AnimalViewHolder>(animals) {
 
-    override val viewLayoutResource: Int
-        get() = R.layout.viewholder_animal
+    override val viewLayoutResource = R.layout.viewholder_animal
 
     override fun onInstantiateViewHolder(itemView: View) = AnimalViewHolder(itemView)
 
