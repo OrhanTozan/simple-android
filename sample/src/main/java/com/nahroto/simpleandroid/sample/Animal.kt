@@ -1,7 +1,6 @@
 package com.nahroto.simpleandroid.sample
 
-data class Animal
-(
+data class Animal(
         val name: String,
         val amountLegs: Int,
         val lifeExpectancy: Int
