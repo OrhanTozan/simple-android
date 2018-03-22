@@ -7,17 +7,16 @@ import kotlinx.android.synthetic.main.viewholder_animal.view.*
 class AnimalAdapter
 (
         animals: ArrayList<Animal>
-) : SimpleRecyclerViewAdapter<SimpleRecyclerViewAdapter.SimpleViewHolder>(animals)
+) : SimpleRecyclerViewAdapter<Animal, AnimalAdapter.AnimalViewHolder>(animals)
 {
     override fun getViewLayoutResource() = R.layout.viewholder_animal
 
     override fun onInstantiateViewHolder(itemView: View) = AnimalViewHolder(itemView)
 
-    class AnimalViewHolder(itemView: View) : SimpleViewHolder(itemView)
+    class AnimalViewHolder(itemView: View) : SimpleViewHolder<Animal>(itemView)
     {
-        override fun bind(model: Any)
+        override fun bind(model: Animal)
         {
-            model as Animal
             itemView.name.text = model.name
             itemView.amountLegs.text = model.amountLegs.toString()
             itemView.lifeExpectancy.text = model.lifeExpectancy.toString()
