@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-abstract class SimpleRecyclerViewAdapter<VH : SimpleRecyclerViewAdapter.SimpleViewHolder>
+abstract class SimpleRecyclerViewAdapter<T, VH : SimpleRecyclerViewAdapter.SimpleViewHolder<T>>
 (
-        private val models: List<Any>
+        private val models: List<T>
 ) : RecyclerView.Adapter<VH>()
 {
     abstract fun getViewLayoutResource(): Int
@@ -24,8 +24,8 @@ abstract class SimpleRecyclerViewAdapter<VH : SimpleRecyclerViewAdapter.SimpleVi
 
     override fun onBindViewHolder(holder: VH, position: Int) = holder.bind(models[position])
 
-    abstract class SimpleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    abstract class SimpleViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        abstract fun bind(model: Any)
+        abstract fun bind(model: T)
     }
 }
