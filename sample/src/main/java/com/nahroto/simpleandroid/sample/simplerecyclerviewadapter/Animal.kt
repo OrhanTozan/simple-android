@@ -1,4 +1,4 @@
-package com.nahroto.simpleandroid.sample
+package com.nahroto.simpleandroid.sample.simplerecyclerviewadapter
 
 data class Animal(
         val name: String,

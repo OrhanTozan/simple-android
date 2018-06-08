@@ -15,14 +15,14 @@ abstract class SimpleRecyclerViewAdapter<T, VH : SimpleRecyclerViewAdapter.Simpl
 
     abstract fun onInstantiateViewHolder(itemView: View): VH
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+    final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val itemView = LayoutInflater.from(parent.context).inflate(viewLayoutResource, parent, false)
         return onInstantiateViewHolder(itemView)
     }
 
-    override fun getItemCount(): Int = models.size
+    final override fun getItemCount(): Int = models.size
 
-    override fun onBindViewHolder(holder: VH, position: Int) = holder.bind(models[position])
+    final override fun onBindViewHolder(holder: VH, position: Int) = holder.bind(models[position])
 
     abstract class SimpleViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
         abstract fun bind(model: T)

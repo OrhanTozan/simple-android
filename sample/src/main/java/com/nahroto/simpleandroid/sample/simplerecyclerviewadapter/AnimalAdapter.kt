@@ -1,4 +1,4 @@
-package com.nahroto.simpleandroid.sample
+package com.nahroto.simpleandroid.sample.simplerecyclerviewadapter
 
 import android.view.View
 import com.nahroto.simpleandroid.SimpleRecyclerViewAdapter
